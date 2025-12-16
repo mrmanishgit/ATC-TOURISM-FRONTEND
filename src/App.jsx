@@ -10,6 +10,7 @@ import DestinationsPage from './pages/DestinationsPage'
 import PackagesPage from './pages/PackagesPage'
 import ReportsPage from './pages/ReportsPage'
 import SettingsPage from './pages/SettingsPage'
+
 import './App.css'
 
 function App() {

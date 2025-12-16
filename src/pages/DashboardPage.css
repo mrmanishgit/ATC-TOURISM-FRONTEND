@@ -17,3 +17,57 @@
   font-size: 1.2rem;
 }
 
+body { background: #f8f9fa; }
+    .album { padding: 3rem 0; }
+    .card-img-top {
+      width: 100%;
+      height: 200px;           /* thumbnail height */
+      object-fit: cover;       /* crop to fill while preserving aspect ratio */
+    }
+    @media (min-width: 1200px) {
+      .card-img-top { height: 220px; }
+    } 
+
+    /* ↓ Add this part for your slider ↓ */
+  .carousel-item img {
+    height: 400px;       /* or try 350px if you want smaller */
+    object-fit: cover;
+  } 
+
+
+  .page-header {
+  background-color: #000;
+  color: #fff;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  border-radius: 6px;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+} 
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;        /* SPACE between dropdown & delete */
+  justify-content: flex-end; /* Push actions to right side */
+}
+
+
+
+
+
+
+/* .carousel-image {
+  height: 50%;
+  object-fit: cover;
+  width: 50%;
+
+
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+} */
