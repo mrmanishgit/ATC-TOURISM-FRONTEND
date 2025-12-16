@@ -33,5 +33,4 @@ function App() {
     </BrowserRouter>
   )
 }
-<div>Naveen</div>
 export default App
