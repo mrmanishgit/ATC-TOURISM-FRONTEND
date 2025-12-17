@@ -12,6 +12,7 @@ import ReportsPage from './pages/ReportsPage'
 import SettingsPage from './pages/SettingsPage'
 
 import './App.css'
+import Contact from './pages/Contact'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<DashboardHome />} />
           <Route path="tours" element={<ToursPage />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="bookings" element={<BookingsPage />} />
           <Route path="customers" element={<CustomersPage />} />
           <Route path="destinations" element={<DestinationsPage />} />

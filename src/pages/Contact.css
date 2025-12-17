@@ -1,0 +1,248 @@
+/* contact.css */
+
+:root {
+  --primary-color: #3056D3;
+  --secondary-color: #13C296;
+  --dark-color: #1a1a1a;
+  --body-color: #637381;
+  --light-bg: #f8f9fa;
+}
+
+.contact-section {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  background-color: #ffffff;
+  padding: 40px 0;
+}
+
+@media (min-width: 992px) {
+  .contact-section {
+    padding: 60px 0; /* Fixed from 720px */
+  }
+}
+
+.contact-info-wrapper {
+  margin-bottom: 48px;
+  max-width: 570px;
+}
+
+@media (min-width: 992px) {
+  .contact-info-wrapper {
+    margin-bottom: 0;
+  }
+}
+
+.section-badge {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.section-title {
+  margin-bottom: 24px;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--dark-color);
+}
+
+@media (min-width: 576px) {
+  .section-title {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .section-title {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-title {
+    font-size: 40px;
+  }
+}
+
+.section-description {
+  margin-bottom: 36px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--body-color);
+}
+
+.contact-info-item {
+  display: flex;
+  width: 100%;
+  max-width: 370px;
+  margin-bottom: 32px;
+}
+
+.icon-box {
+  margin-right: 24px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  min-width: 60px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: rgba(48, 86, 211, 0.05);
+  color: var(--primary-color);
+}
+
+@media (min-width: 576px) {
+  .icon-box {
+    height: 70px;
+    width: 70px;
+    min-width: 70px;
+  }
+}
+
+.info-title {
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark-color);
+}
+
+.info-text {
+  font-size: 16px;
+  color: var(--body-color);
+  margin: 0;
+}
+
+.social-links {
+  margin-top: 40px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: rgba(48, 86, 211, 0.1);
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(48, 86, 211, 0.3);
+}
+
+.contact-form-wrapper {
+  position: relative;
+  padding: 32px;
+}
+
+@media (min-width: 576px) {
+  .contact-form-wrapper {
+    padding: 32px;
+  }
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  font-size: 16px;
+  color: var(--body-color);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  color: #9ca3af;
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+.btn-submit {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  padding: 10px;
+  color: #ffffff;
+  font-weight: 500;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  opacity: 0.9;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Decorative SVG elements */
+.decoration-top-right {
+  position: absolute;
+  right: -36px;
+  top: -40px;
+  z-index: -1;
+}
+
+.decoration-right {
+  position: absolute;
+  right: -40px;
+  top: 90px;
+  z-index: -1;
+}
+
+.decoration-bottom-left {
+  position: absolute;
+  bottom: -28px;
+  left: -28px;
+  z-index: -1;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .contact-section {
+    background-color: #1f2937;
+  }
+  
+  .section-title,
+  .info-title {
+    color: #ffffff;
+  }
+  
+  .section-description,
+  .info-text {
+    color: #9ca3af;
+  }
+  
+  .form-control {
+    border-color: #4b5563;
+    background-color: #1f2937;
+    color: #9ca3af;
+  }
+  
+  .form-control:focus {
+    border-color: var(--primary-color);
+  }
+}

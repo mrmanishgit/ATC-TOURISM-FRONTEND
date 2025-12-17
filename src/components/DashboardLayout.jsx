@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
 import './DashboardLayout.css'
+import { path } from 'framer-motion/client'
 
 function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
@@ -8,6 +9,7 @@ function DashboardLayout() {
   const navigate = useNavigate()
 
   const menuItems = [
+    {path: 'contact' , label: 'Contact' , icon:'✆'},
     { path: '/dashboard', label: 'Dashboard', icon: '📊' },
     { path: '/dashboard/tours', label: 'Tours', icon: '🗺️' },
     { path: '/dashboard/bookings', label: 'Bookings', icon: '📅' },
