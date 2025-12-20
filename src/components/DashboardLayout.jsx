@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
 import './DashboardLayout.css'
-import { path } from 'framer-motion/client'
+// import { path } from 'framer-motion/client'
 
 function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
