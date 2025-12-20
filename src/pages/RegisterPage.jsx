@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import "./RegisterPage.css";
+import "./Register.css";
 
-const RegisterPage = () => {
+const Register = () => {
   const [form, setForm] = useState({
     name: "",
     mobile: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    confirmPassword:"",
     dob: "",
-    idType: "",
-    idNumber: "",
+    nationality:"",
+    aadhar:"",
+    passport:"",
     photo: null,
   });
 
@@ -22,7 +23,7 @@ const RegisterPage = () => {
   const handleFileChange = (e) => {
     setForm({ ...form, photo: e.target.files[0] });
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     // simple validation
@@ -31,8 +32,8 @@ const RegisterPage = () => {
       return;
     }
     //Check password conformation
-    if (form.password !== form.confirmPassword) {
-      alert("Password do not macth.Please re-enter.");
+    if (form.password !==form.confirmPassword){
+      alert("Please enter correct password.");
       return;
     }
     if (!form.nationality) {
@@ -47,34 +48,34 @@ const RegisterPage = () => {
       alert("Please enter your passport Number.")
       return;
     }
-
+    
     alert(`Registered successfully! Welcome ${form.name}`);
     console.log(form);
   };
 
   return (
-
+    
     <div className="page">
+      
+    <div className="register-page">
+      <div className="form-container">
+        <h2>Register Your Account </h2>
 
-      <div className="register-page">
-        <div className="form-container">
-          <h2>Register Your Account </h2>
-
-
-          <form onSubmit={handleSubmit}>
-            <label>Full Name:</label>
-            <input type="text" name="name" placeholder="Full Name" onChange={handleChange} />
-            <label>Mobile No:</label>
-            <input type="tel" name="mobile" placeholder="Mobile Number" onChange={handleChange} />
-            <label>Email:</label>
-            <input type="email" name="email" placeholder="Email ID" onChange={handleChange} />
-            <label>Password:</label>
-            <input type="password" name="password" placeholder="Password" onChange={handleChange} />
-            <label>Confirm Password:</label>
-            <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} />
-            <label>Date of Birth:</label>
-            <input type="date" name="dob" onChange={handleChange} required />
-            <div className="radio-group">
+        
+        <form onSubmit={handleSubmit}>
+          <label>Full Name:</label>
+          <input type="text" name="name" placeholder="Full Name" onChange={handleChange} />
+          <label>Mobile</label>
+          <input type="tel" name="mobile" placeholder="Mobile Number" onChange={handleChange} />
+          <label>Email:</label>
+          <input type="email" name="email" placeholder="Email ID" onChange={handleChange} />
+          <label>Password:</label>
+          <input type="password" name="password" placeholder="Password" onChange={handleChange} />
+          <label>confirmPassword:</label>
+          <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} />
+          <label>Date of Birth:</label>
+          <input type="text"  onChange={handleChange} />
+          <div className="radio-group">
             <label>
               <input type="radio" name="nationality" value="Indian" checked={form.nationality === "Indian"} onChange={handleChange}/>
               Indian
@@ -91,17 +92,23 @@ const RegisterPage = () => {
             <input type="text" name="passport" placeholder="Passport Number" onChange={handleChange}/>
           )}
         
-            <button type="submit">Register Now</button>
-            <p className="signin">
-              Alredy Have an account? <a href="#">Sign In</a>
-            </p>
-          </form>
+              <label className="file-upload">
+              Upload Photo:
+            <input type="file" accept="image/*" onChange={handleFileChange} />
+          </label>
+          <button type="submit">Register Now</button>
+          <p className="signin">
+            Alredy Have an account? <a href="#">Sign In</a>
+          </p>
+        </form>
         </div>
-      </div>
+      </div> 
     </div>
-  );
+
+  
+                
+  );             
+  };
 
 
-};
-
-export default RegisterPage;
+export default Register;
