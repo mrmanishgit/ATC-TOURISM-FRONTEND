@@ -1,58 +1,52 @@
+/* Register.css */
 
+ .page{
+  margin: 0;
+  /* font-family: 'Poppins', sans-serif; */
+  background: url('../assets/ChatGPT\ Image\ Dec\ 16\,\ 2025\,\ 04_14_32\ PM.png') ;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  background-position: 0px;
+  background-size: cover;
+  
 
-.page {
-    margin: 0;
-    /* font-family: 'Poppins', sans-serif; */
-    background: url('../assets/bgimg.png');
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-position: 0px;
-    background-size: cover;
 }
 
 .register-page {
-    /* background: rgba(204, 188, 188, 0.65); */
-    padding: 5px 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    width: 380px;
-    margin-right: 350px; 
-     
+  /* background: rgba(204, 188, 188, 0.65); */
+  padding: 15px 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  margin-right: 500px;
+  height: max-content 40px; 
 
 }
-
-
-.register-page:hover {
-    background: rgba(167, 168, 168, 0.6);
+.register-page:hover{
+  background: rgba(167, 168, 168, 0.6);
 
 }
 
 h2 {
-    text-align: center;
-    color: #1a1a1a;
-    margin-bottom: 8px;
-    margin-top: 0px;
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-}   
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+  margin-top: 1px;
 }
 
 .tagline {
-    text-align: center;
-    font-size: 14px;
-    color: #948181;
-    margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #948181;
+  margin-bottom: 30px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 
 }
 
@@ -61,61 +55,65 @@ input[type="email"],
 input[type="password"],
 input[type="confirm password"],
 input[type="tel"],
-input[type="date"],
-input[type="Aadhar Number"] {
-    padding: 2px;
-    border: 1px solid #bbb;
-    border-radius: 6px;
-    font-size: 14px;
-
+input[type="dob"],
+input[type="Aadhar Number"]
+input[type="Passport Number"] {
+  padding: 6px;
+  border:groove;
+  border-radius: 6px;
+  font-size:14px;
+  
+  
 }
 
 label {
-    font-size: 14x;
-    color: #f6f0f0e9;
-    font-weight: 700;
+  font-size: 15x;
+  color: #f6f0f0e9;
+  font-weight: 700;
 }
 
 .radio-group {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  accent-color: #007bff
+
 }
 
 button {
-    background-color: #009688;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 button:hover {
-    background-color: #0b4552;
+  background-color: #0b4552;
 }
 
 .signin {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 14px;
-    color: aliceblue;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: aliceblue;
 
 }
 
 .signin a {
-    color: #fcf4f7;
-    text-decoration: none;
-    font-size: large;
-    font-weight: 800;
+  color: #fcf4f7;
+  text-decoration: none;
+  font-size: large;
+  font-weight: 800;
 }
 
 .signin a:hover {
-    text-decoration: none;
-    color: rgba(223, 12, 12, 0.836);
+  text-decoration: none;
+  color: rgba(223, 12, 12, 0.836);
 }
 
-.file-upload {
-    color: rgb(255, 240, 250);
+.file-upload{
+  color: rgb(255, 240, 250);
 }
