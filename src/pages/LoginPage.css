@@ -6,6 +6,13 @@
   position: relative;
   background: url("/public/images/bgimg.png") center/cover no-repeat;
   align-items: center;
+  
+
+}
+.login-box h2 {
+  white-space: nowrap;
+  font-size: 28px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 /* ===== DARK OVERLAY ===== */
@@ -21,22 +28,17 @@
 .login-box {
   position: relative;
   z-index: 1;
-  width: 336px; /* smaller width */
+  width: 380px; /* smaller width */
   background: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
   padding: 25px 20px;
-  margin-left: 60px; /* distance from left side */
+  margin-left: 60px; 
   /* box-shadow: 0 20px 40px rgb(247, 245, 205); */
   animation: slideUp 0.6s ease;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 377px;
 }
 
-.login-box:hover {
-  /* transform: translateY(-3px); */
-  /* box-shadow: 0 25px 50px rgb(248, 246, 246); */
-  
-}
 
 /* ===== TITLE ===== */
 .login-box h2 {

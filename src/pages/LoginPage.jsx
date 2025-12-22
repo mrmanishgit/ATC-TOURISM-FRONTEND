@@ -61,7 +61,7 @@ const LoginPage = () => {
   return (
     <section className="login-page">
       <div className="login-box">
-        <h2>Aja Tourism</h2>
+        <h2>AJA Tourism Corporation </h2>
 
         <form onSubmit={handleLogin}>
           <div className="input-group">
