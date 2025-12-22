@@ -1,0 +1,171 @@
+
+/* Page centering */
+body {
+  margin: 0;
+}
+
+.container {
+  place-items: center;            
+}
+
+/* Limit content width so it looks nice on large screens */
+.wrap {
+  width: min(700px, 92vw);
+}
+
+.heading, .subheading {
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+/* Card styles */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  padding: 1rem 1.25rem;
+
+}
+
+.card-header h1 {
+  margin: 0 0 0.75rem;
+  text-align: center;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.card-body {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.card-data {
+  width: 100%;
+  padding: 10px;
+  margin: 0;                     /* remove extra margin inside grid */
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Small field wrapper for labels */
+.field .label {
+  display: block;
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+/* Buttons */
+.btn {
+  appearance: none;
+  border: 1px solid #cbd5e1;
+  background: #0ea5e9;
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn:hover { background: #0284c7; }
+
+/* Preview image */
+.preview {
+  display: block;
+  margin-top: 6px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+}
+
+/* Testimonials list */
+.testimonials {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-items: center;          /* center each card */
+}
+
+.testimonial-card {
+  width: min(600px, 92vw);
+  /* background: #fff; */
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+}
+
+.meta .name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.quote {
+  grid-column: 1 / -1;
+  margin: 0.5rem 0 0;
+  /* background: #f1f5f9; */
+  border-left: 4px solid #3b82f6;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+}
+
+/* Stars */
+.stars .star {
+  font-size: inherit;
+  line-height: 1;
+}
+
+
+.wrap {
+  width: min(600px, 92vw);
+  padding: 1rem;
+  border-radius: 16px;
+position: relative;
+  
+  
+}
+.card {
+  background: rgba(255, 255, 255, 0.9); /* readable over image */
+  backdrop-filter: blur(4px);
+  
+}
+/* Full screen background */
+.bg-container {
+  height: 100vh;           
+  width: 100%;
+  background-image: url("./chowmahalla.jpg");
+  background-size: cover;     /* Cover whole screen */
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .btn{
+  width: 100px;
+  display: block;          /* block allows auto margins */
+  margin: 16px auto;       /* centers horizontally */
+  border-radius: 6px;
+  background-color: #f4b400;
+  color: #000;
+  cursor: pointer;
+  text-align: center;
+
+}
+
+
+
+
+

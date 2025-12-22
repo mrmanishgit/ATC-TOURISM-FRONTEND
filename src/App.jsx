@@ -5,14 +5,17 @@ import RegisterPage from "./pages/RegisterPage";
 import DashboardLayout from './components/DashboardLayout'
 import DashboardHome from './pages/DashboardHome'
 import ToursPage from './pages/ToursPage'
-import BookingsPage from './pages/BookingsPage'
-import CustomersPage from './pages/CustomersPage'
+// import BookingsPage from './pages/BookingsPage'
+// import CustomersPage from './pages/CustomersPage'
 import DestinationsPage from './pages/DestinationsPage'
 import PackagesPage from './pages/PackagesPage' 
 import ReportsPage from './pages/ReportsPage'
 import SettingsPage from './pages/SettingsPage'
 import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
+import Gallery from './pages/Gallery'
+import Testimonials from './pages/Testimonials'
+import GiveReview from './pages/GiveReview'
 
 import './App.css'
 import Contact from './pages/Contact'
@@ -25,12 +28,15 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/give-review" element={<GiveReview />} />
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<DashboardHome />} />
           <Route path="tours" element={<ToursPage />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="bookings" element={<BookingsPage />} />
-          <Route path="customers" element={<CustomersPage />} />
+          {/* <Route path="bookings" element={<BookingsPage />} />
+          <Route path="customers" element={<CustomersPage />} /> */}
           <Route path="destinations" element={<DestinationsPage />} />
           <Route path="packages" element={<PackagesPage />} />
           <Route path="reports" element={<ReportsPage />} />
