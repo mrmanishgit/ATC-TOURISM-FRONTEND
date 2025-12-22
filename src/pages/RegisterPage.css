@@ -19,13 +19,14 @@
   padding: 15px 25px;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  width: 300px;
+  width: 380px;
   margin-right: 500px;
   height: max-content 40px; 
 
 }
 .register-page:hover{
   background: rgba(251, 252, 209, 0.5);
+  
 
 }
 
