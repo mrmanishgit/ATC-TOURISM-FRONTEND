@@ -144,10 +144,27 @@ const BookingPage = () => {
                     <option>Cancelled</option>
                   </select>
                 </td>
+
+
+                <td>
+                  <div className="actions">
+                    <select 
+                      className="input"
+                      value={b.status}
+                      onChange={(e) => updateStatus(b.id, e.target.value)}
+                    >
+                      {STATUS_OPTIONS.filter((s) => s !== "All").map((s) => (
+                        <option key={s} value={s}>{s}</option>
+                      ))}
+                    </select>
+                    <button className="btn btn btn-danger" onClick={() => deleteBooking(b.id)} style={{color:'black', border: '2px solid black'}}>Delete</button>
+                  </div>
+
                 <td style={styles.td}>
                   <button onClick={() => deleteFromTable(b.id)} style={styles.deleteBtn}>
                     Delete
                   </button>
+
                 </td>
               </tr>
             ))

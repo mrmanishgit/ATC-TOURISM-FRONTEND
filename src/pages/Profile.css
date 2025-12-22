@@ -1,0 +1,160 @@
+/* Page Background */
+.profile-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Card Header */
+.card-header {
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  padding: 15px;
+  font-size: 1.2rem;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffffff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Edit Icon */
+.edit-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  border-radius: 50%;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+/* Form Labels */
+.form-label {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Inputs */
+.form-control {
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 0.95rem;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.15rem rgba(102, 126, 234, 0.25);
+}
+
+/* Buttons */
+.btn {
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border: none;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline-primary {
+  border: 2px solid #667eea;
+  color: #667eea;
+}
+
+.btn-outline-primary:hover {
+  background: #667eea;
+  color: #fff;
+}
+
+.btn-outline-danger {
+  border: 2px solid #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .profile-card {
+    margin: 10px;
+  }
+
+  .profile-img {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* Profile Image Wrapper */
+.profile-img-wrapper {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Hover Animation */
+.profile-img-wrapper:hover .profile-img {
+  transform: scale(1.1);
+  filter: brightness(70%);
+}
+
+/* Camera Overlay */
+.profile-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+/* Show overlay on hover */
+.profile-img-wrapper:hover .profile-overlay {
+  opacity: 1;
+}
+

@@ -1,0 +1,47 @@
+/* Background */
+.booking-bg {
+  min-height: 100vh;
+
+  background-image: url('/public/images/Buddist.jpeg'); /* Replace with your Hyderabad image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Card animations */
+.animated-card {
+  animation: fadeInUp 1s ease forwards;
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Button hover animation */
+.btn-animate {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-animate:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Guest cards hover */
+.guest-card:hover {
+  transform: translateY(-2px);
+  transition: 0.3s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

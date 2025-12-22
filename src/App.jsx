@@ -19,6 +19,10 @@ import GiveReview from './pages/GiveReview'
 
 import './App.css'
 import Contact from './pages/Contact'
+import Bookings from './pages/Bookings'
+import Profile from './pages/Profile'
+import Paymentpage from './pages/Paymentpage'
+import User from './pages/User'
 
 function App() {
   return (
@@ -38,10 +42,16 @@ function App() {
           <Route path="tours" element={<ToursPage />} />
           <Route path="contact" element={<Contact />} />
           <Route path="bookings" element={<BookingsPage />} />
+          <Route path="bookings" element={<Bookings />} />
+          <Route path="profile" element={<Profile/>} />
+          <Route path="paymentpage" element={<Paymentpage/>} />
+          <Route path="user" element={<User/>} />
+
           <Route path="customers" element={<CustomersPage />} />
           <Route path="destinations" element={<DestinationsPage />} />
           <Route path="reports" element={<ReportsPage />} />
           <Route path="settings" element={<SettingsPage />} />
+
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
