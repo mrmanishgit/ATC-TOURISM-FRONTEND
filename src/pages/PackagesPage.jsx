@@ -1,21 +1,12 @@
 
+import Navbar from "../components/Navbar";
 import "./DashboardPage.css";
 
 function PackagesPage() {
   return (
+    <>
+    <Navbar/>
     <div>
-
-      {/* HEADER */}
-      <h2
-        style={{
-          textAlign: "center",
-          backgroundColor: "#0B1C2D",
-          color: "white",
-          padding: "10px",
-        }}
-      >
-        Adventure Awaits — Let’s Go Explore
-      </h2>
 
       {/* CAROUSEL */}
 
@@ -310,6 +301,7 @@ function PackagesPage() {
       </div>
 
     </div>
+    </>
   );
 }
 

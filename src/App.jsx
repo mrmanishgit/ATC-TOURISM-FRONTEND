@@ -5,10 +5,10 @@ import RegisterPage from "./pages/RegisterPage";
 import DashboardLayout from './components/DashboardLayout'
 import DashboardHome from './pages/DashboardHome'
 import ToursPage from './pages/ToursPage'
-// import BookingsPage from './pages/BookingsPage'
-// import CustomersPage from './pages/CustomersPage'
+import BookingsPage from './pages/BookingsPage'
+import CustomersPage from './pages/CustomersPage'
 import DestinationsPage from './pages/DestinationsPage'
-import PackagesPage from './pages/PackagesPage' 
+import PackagesPage from './pages/PackagesPage'
 import ReportsPage from './pages/ReportsPage'
 import SettingsPage from './pages/SettingsPage'
 import Home from './pages/Home'
@@ -31,21 +31,22 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/give-review" element={<GiveReview />} />
+        <Route path="packages" element={<PackagesPage />} />
+
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<DashboardHome />} />
           <Route path="tours" element={<ToursPage />} />
           <Route path="contact" element={<Contact />} />
-          {/* <Route path="bookings" element={<BookingsPage />} />
-          <Route path="customers" element={<CustomersPage />} /> */}
+          <Route path="bookings" element={<BookingsPage />} />
+          <Route path="customers" element={<CustomersPage />} />
           <Route path="destinations" element={<DestinationsPage />} />
-          <Route path="packages" element={<PackagesPage />} />
           <Route path="reports" element={<ReportsPage />} />
           <Route path="settings" element={<SettingsPage />} />
         </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
-    
+
   )
 }
 export default App
