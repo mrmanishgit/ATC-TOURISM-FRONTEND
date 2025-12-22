@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Register.css";
+import "./RegisterPage.css";
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -7,10 +7,11 @@ const Register = () => {
     mobile: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    confirmPassword:"",
     dob: "",
-    idType: "",
-    idNumber: "",
+    nationality:"",
+    aadhar:"",
+    passport:"",
     photo: null,
   });
 
@@ -22,7 +23,7 @@ const Register = () => {
   const handleFileChange = (e) => {
     setForm({ ...form, photo: e.target.files[0] });
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     // simple validation
@@ -31,67 +32,83 @@ const Register = () => {
       return;
     }
     //Check password conformation
-    if (form.password !== form.confirmPassword) {
-      alert("Password do not macth.Please re-enter.");
+    if (form.password !==form.confirmPassword){
+      alert("Please enter correct password.");
       return;
     }
-    if (!form.idType) {
-      alert("Please select your Identity Proof (Aadhaar or Passport).");
+    if (!form.nationality) {
+       alert("Please enter your nationality.).");
+       return;
+    }
+    if (form.nationality === "Aadhar" && !form.aadhar){
+      alert("Please enter your aadhar Number.")
       return;
     }
-    if (form.idType === "Aadhar" && !/^\d{12}$/.test(form.idNumber)) {
-      alert("Please enter a valid !12-digits Aadhar Number.")
+    if (form.nationality === "Passport" && !form.passport){
+      alert("Please enter your passport Number.")
       return;
     }
-    if (form.idType === "Passport" && form.idNumber.length < 6) {
-      alert("Please enter a calid Passport number(min 6 characters.");
-      return;
-
-    }
-
+    
     alert(`Registered successfully! Welcome ${form.name}`);
     console.log(form);
   };
 
   return (
-
+    
     <div className="page">
+      
+    <div className="register-page">
+      <div className="form-container">
+        <h2>Register Your Account </h2>
 
-      <div className="register-page">
-        <div className="form-container">
-          <h2>Register Your Account </h2>
-
-
-          <form onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Full Name" onChange={handleChange} />
-            <input type="tel" name="mobile" placeholder="Mobile Number" onChange={handleChange} />
-            <input type="email" name="email" placeholder="Email ID" onChange={handleChange} />
-            <input type="password" name="password" placeholder="Password" onChange={handleChange} />
-            <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} />
-            <label>Date of Birth:</label>
-            <input type="date" name="dob" onChange={handleChange} required />
-            <select name="idType" onChange={handleChange} required>
-              <option value="">select Identity Proof </option>
-              <option value="aadhar">Aadhar</option>
-              <option value="Passport">Passport</option>
-            </select>
-            <input type="text" name="idNumber" aria-placeholder="Identity Proof Number" onChange={handleChange} />
-            <label className="file-upload">
-              Upload Photo:
-              <input type="file" accept="image/*" onChange={handleFileChange} />
+        
+        <form onSubmit={handleSubmit}>
+          <label>Full Name:</label>
+          <input type="text" name="name" placeholder="Full Name" onChange={handleChange} />
+          <label>Mobile</label>
+          <input type="tel" name="mobile" placeholder="Mobile Number" onChange={handleChange} />
+          <label>Email:</label>
+          <input type="email" name="email" placeholder="Email ID" onChange={handleChange} />
+          <label>Password:</label>
+          <input type="password" name="password" placeholder="Password" onChange={handleChange} />
+          <label>confirmPassword:</label>
+          <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} />
+          <label>Date of Birth:</label>
+          <input type="date" name="dob" placeholder="Date of Birth"  onChange={handleChange} />
+          <div className="radio-group">
+            <label>
+              <input type="radio" name="nationality" value="Indian" checked={form.nationality === "Indian"} onChange={handleChange}/>
+              Indian
             </label>
-
-            <button type="submit">Register Now</button>
-            <p className="signin">
-              Alredy Have an account? <a href="#">Sign In</a>
-            </p>
-          </form>
+            <label>
+              <input type="radio" name="nationality" value="Non Indian" checked={form.nationality === "Non Indian"} onChange={handleChange}/>
+              Non Indian
+            </label>
+          </div>
+          {form.nationality === "Indian" &&  (
+            <input type="text" name="aadhar" placeholder="Aadhar Number" maxLength="12" onChange={handleChange}/>
+          )}
+          {form.nationality === "Non Indian" && (
+            <input type="text" name="passport" placeholder="Passport Number" onChange={handleChange}/>
+          )}
+        
+              <label className="file-upload">
+              Upload Photo:
+            <input type="file" accept="image/*" onChange={handleFileChange} />
+          </label>
+          <button type="submit">Register Now</button>
+          <p className="signin">
+            Alredy Have an account? <a href="#">Sign In</a>
+          </p>
+        </form>
         </div>
-      </div>
+      </div> 
     </div>
-  );
 
+  
+                
+  );             
+  };
 
-};
 
 export default Register;

@@ -4,6 +4,11 @@
   padding: 3rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+}
+.dashboard-header{
+
+  height: 44px;
 }
 
 .dashboard-page h2 {
@@ -41,6 +46,7 @@ body { background: #f8f9fa; }
   padding: 16px 24px;
   margin-bottom: 24px;
   border-radius: 6px;
+  
 }
 
 .page-header h2 {

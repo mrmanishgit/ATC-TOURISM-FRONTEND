@@ -1,0 +1,38 @@
+.navbar {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  background: #0b1c2d;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  color: #fff;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a.active {
+  border-bottom: 2px solid #ffb703;
+}
+
+.login-btn {
+  background: #ffb703;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #000 !important;
+}
