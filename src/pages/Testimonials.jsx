@@ -132,10 +132,10 @@ function Testimonials() {
   return (
     <>
     <Navbar />
-    <div className="testimonial-page">
+    <div className="test-page">
       {/* Hero Section */}
-      <section className="testimonial-hero">
-        <div className="hero-overlay">
+      <section className="test-hero">
+        <div className="hero-overlay-1">
           <h1>AJA Tourism Corporation</h1>
           <p>What Our Happy Travelers Say</p>
           
@@ -152,9 +152,9 @@ function Testimonials() {
           {testimonials.map((item, index) => (
             <div
              className="testimonial-card" key={index}>
-              <img src={item.img} alt={item.name} className="profile-img" />
-              <p className="review">“{item.review}”</p>
-              <div className="rating">{item.rating}</div>
+              <img src={item.img} alt={item.name} className="pro-img" />
+              <p className="review-t">“{item.review}”</p>
+              <div className="rating-t">{item.rating}</div>
               <h4>{item.name}</h4>
               <span>{item.location}</span>
             </div>

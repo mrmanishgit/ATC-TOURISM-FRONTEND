@@ -159,6 +159,7 @@ const BookingPage = () => {
                     </select>
                     <button className="btn btn btn-danger" onClick={() => deleteBooking(b.id)} style={{color:'black', border: '2px solid black'}}>Delete</button>
                   </div>
+                  </td>
 
                 <td style={styles.td}>
                   <button onClick={() => deleteFromTable(b.id)} style={styles.deleteBtn}>
