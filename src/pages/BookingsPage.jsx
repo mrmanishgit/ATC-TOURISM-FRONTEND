@@ -95,103 +95,10 @@ const BookingPage = () => {
   };
 
   return (
-    <div style={styles.container}>
-
-      <div style={styles.headerBar}>
-        <h2 style={styles.headerTitle}>Bookings List</h2>
-
-        <div style={styles.headerRight}>
-          <input
-            type="text"
-            placeholder="Search by ID or Name "
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            style={styles.headerSearch}
-          />
-
-          <select
-            value={filterStatus}
-            onChange={(e) => setFilterStatus(e.target.value)}
-            style={styles.headerDropdown}
-          >
-            <option value="All">All</option>
-            <option value="Confirmed">Confirmed</option>
-            <option value="Pending">Pending</option>
-            <option value="Cancelled">Cancelled</option>
-          </select>
-        </div>
-      </div>
-
-      <table style={styles.table}>
-        <thead>
-          <tr>
-            <th style={styles.th}>Booking ID</th>
-            <th style={styles.th}>Customer</th>
-            <th style={styles.th}>Date</th>
-            <th style={styles.th}>Packages</th>
-            <th style={styles.th}>Amount (₹)</th>
-            <th style={styles.th}>Status</th>
-            <th style={styles.th}>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filtered.length === 0 ? (
-            <tr>
-              <td colSpan="7" style={styles.noData}>No results found</td>
-            </tr>
-          ) : (
-            filtered.map((b) => (
-              <tr key={b.id}>
-                <td style={styles.td}>{b.id}</td>
-                <td style={styles.td}>{b.customer}</td>
-                <td style={styles.td}>{b.date}</td>
-                <td style={styles.td}>{b.Packages}</td>
-                <td style={styles.td}>{b.amount}</td>
-                <td style={styles.td}>
-                  <select
-                    value={b.status}
-                    onChange={(e) => changeStatus(b.id, e.target.value)}
-                    style={{ ...styles.dropdown, ...getStatusStyle(b.status) }}
-                  >
-                    <option>Confirmed</option>
-                    <option>Pending</option>
-                    <option>Cancelled</option>
-                  </select>
-                </td>
-                <td style={styles.td}>
-                  <button onClick={() => deleteFromTable(b.id)} style={styles.deleteBtn}>
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))
-          )}
-        </tbody>
-      </table>
-
-      <h3 style={styles.subHeading}>Bookings History</h3>
-      <table style={styles.table}>
-        <thead>
-          <tr>
-            <th style={styles.th}>Booking ID</th>
-            <th style={styles.th}>Customer</th>
-            <th style={styles.th}>Packages</th>
-            <th style={styles.th}>Amount</th>
-            <th style={styles.th}>State</th>
-          </tr>
-        </thead>
-        <tbody>
-          {bookingHistory.map((b) => (
-            <tr key={b.id}>
-              <td style={styles.td}>{b.id}</td>
-              <td style={styles.td}>{b.customer}</td>
-              <td style={styles.td}>{b.Packages}</td>
-              <td style={styles.td}>{b.amount}</td>
-              <td style={styles.td}>{getHistoryState(b)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="dashboard-page">
+      <h2>Bookings</h2>
+      <p>Coming Soon</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae porro quibusdam tempore eaque vero numquam ipsum impedit odit modi magnam?</p>
     </div>
   );
 };
