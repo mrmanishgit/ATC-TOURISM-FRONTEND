@@ -1,6 +1,7 @@
 
 import Navbar from "../components/Navbar";
 import "./DashboardPage.css";
+import "./PackagesPage.css";
 
 function PackagesPage() {
   return (
@@ -150,7 +151,7 @@ function PackagesPage() {
                 <h5 className="card-title">Family Package</h5>
                 <p className="card-text">Price - ₹4,999</p>
                 <button className="btn btn-success">
-                  View Details
+                  Book Now
                 </button>
               </div>
             </div>
@@ -165,10 +166,10 @@ function PackagesPage() {
                 alt="Friends Package"
               />
               <div className="card-body">
-                <h5 className="card-title">Friends</h5>
+                <h5 className="card-title">Friends Package</h5>
                 <p className="card-text">Price - ₹9,700</p>
                 <button className="btn btn-success">
-                  View Details
+                  Book Now
                 </button>
               </div>
             </div>
@@ -183,10 +184,10 @@ function PackagesPage() {
                 alt="Students Package"
               />
               <div className="card-body">
-                <h5 className="card-title">Students</h5>
+                <h5 className="card-title">Students Package</h5>
                 <p className="card-text">Price - ₹8,000</p> 
                 <button className="btn btn-success">
-                  View Details
+                  Book Now
                 </button>
               </div>
             </div>
@@ -201,10 +202,10 @@ function PackagesPage() {
                 alt="Couple Package"
               />
               <div className="card-body">
-                <h5 className="card-title">Couple</h5>
+                <h5 className="card-title">Couple Package</h5>
                 <p className="card-text">Price - ₹8,000</p>
                 <button className="btn btn-success">
-                  View Details
+                 Book Now
                 </button>
               </div>
             </div>
@@ -219,10 +220,10 @@ function PackagesPage() {
                 alt="Spritual Package"
               />
               <div className="card-body">
-                <h5 className="card-title">Spritual</h5>
+                <h5 className="card-title">Spritual Package</h5>
                 <p className="card-text">Price - ₹4,000</p>
                 <button className="btn btn-success">
-                  View Details
+                 Book Now
                 </button>
               </div>
             </div>
@@ -237,10 +238,10 @@ function PackagesPage() {
                 alt="Childrens Package"
               />
               <div className="card-body">
-                <h5 className="card-title">Childrens</h5>
+                <h5 className="card-title">Childrens Package</h5>
                 <p className="card-text">Price - ₹7,000</p>
                 <button className="btn btn-success">
-                  View Details
+                 Book Now
                 </button>
               </div>
             </div>
@@ -254,10 +255,10 @@ function PackagesPage() {
                 alt="Adventures Package"
               />
               <div className="card-body">
-                <h5 className="card-title">Adventures</h5>
+                <h5 className="card-title">Adventures Package</h5>
                 <p className="card-text">Price - ₹10,000</p>
                 <button className="btn btn-success">
-                  View Details
+                 Book Now
                 </button>
               </div>
             </div>
@@ -271,10 +272,10 @@ function PackagesPage() {
                 alt="Historical Package"
               />
               <div className="card-body">
-                <h5 className="card-title">Historical</h5>
+                <h5 className="card-title">Historical Package</h5>
                 <p className="card-text">Price - ₹6,500</p>
                 <button className="btn btn-success">
-                  View Details
+                  Book Now
                 </button>
               </div>
             </div>
@@ -288,10 +289,10 @@ function PackagesPage() {
                 alt="Womens Package"
               />
               <div className="card-body">
-                <h5 className="card-title">Womens</h5>
+                <h5 className="card-title">Women's Package</h5>
                 <p className="card-text">Price - ₹5,000</p>
                 <button className="btn btn-success">
-                  View Details
+                 Book Now
                 </button>
               </div>
             </div>
