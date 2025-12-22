@@ -31,13 +31,13 @@ const slides = [
   title: "Golconda Fort",
   description:
     "Golconda Fort is a magnificent historic fortress known for its grand architecture, acoustic system, and panoramic city views.",
-     poster: ramojiPoster,
+  poster: ramojiPoster,
 },
 {
   title: "Chowmahalla Palace",
   description:
     "Chowmahalla Palace is a royal heritage site showcasing the grandeur, culture, and lifestyle of the Nizams of Hyderabad.",
-     poster: ramojiPoster,
+  poster: ramojiPoster,
 },
 
 ];

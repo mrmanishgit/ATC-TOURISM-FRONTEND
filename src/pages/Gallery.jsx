@@ -206,7 +206,7 @@ function GalleryCard({ title, img, desc, previewChars = 140 }) {
   return (
 
     <div className='card-g'>
-      <h3>{title}</h3>
+      <h3 className='text-h'>{title}</h3>
       <img
         src={img}
         alt={title}
@@ -214,6 +214,7 @@ function GalleryCard({ title, img, desc, previewChars = 140 }) {
       <p style={{ margin: 0 }}>{showMore ? desc : preview}</p>
       {desc.length > previewChars && (
         <button
+          className="view-more-btn"
           onClick={() => setShowMore((v) => !v)}>
           {showMore ? 'View Less' : 'View More'}
         </button>
