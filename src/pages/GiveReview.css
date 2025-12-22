@@ -4,13 +4,17 @@ body {
   margin: 0;
 }
 
-.container {
+.ctn-42 {
   place-items: center;            
 }
 
 /* Limit content width so it looks nice on large screens */
-.wrap {
-  width: min(700px, 92vw);
+.wrap-42 {
+  /* width: min(700px, 92vw); */
+  width: min(600px, 92vw);
+  padding: 1rem;
+  border-radius: 16px;
+position: relative;
 }
 
 .heading, .subheading {
@@ -19,26 +23,27 @@ body {
 }
 
 /* Card styles */
-.card {
+.card-42 {
   background: #ffffff;
   border-radius: 14px;
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
   padding: 1rem 1.25rem;
-
+  background: rgba(255, 255, 255, 0.9); /* readable over image */
+  backdrop-filter: blur(4px);
 }
 
-.card-header h1 {
+.card-hdd h1 {
   margin: 0 0 0.75rem;
   text-align: center;
   font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
-.card-body {
+.card-body-18 {
   display: grid;
   gap: 0.75rem;
 }
 
-.card-data {
+.card-data-18 {
   width: 100%;
   padding: 10px;
   margin: 0;                     /* remove extra margin inside grid */
@@ -48,7 +53,7 @@ body {
 }
 
 /* Small field wrapper for labels */
-.field .label {
+.field-18 .label-18 {
   display: block;
   font-size: 0.9rem;
   color: #64748b;
@@ -56,7 +61,7 @@ body {
 }
 
 /* Buttons */
-.btn {
+.btn-18 {
   appearance: none;
   border: 1px solid #cbd5e1;
   background: #0ea5e9;
@@ -69,7 +74,7 @@ body {
 .btn:hover { background: #0284c7; }
 
 /* Preview image */
-.preview {
+.preview-42 {
   display: block;
   margin-top: 6px;
   width: 80px;
@@ -122,27 +127,13 @@ body {
 }
 
 /* Stars */
-.stars .star {
+.stars-18 .star-0 {
   font-size: inherit;
   line-height: 1;
 }
 
-
-.wrap {
-  width: min(600px, 92vw);
-  padding: 1rem;
-  border-radius: 16px;
-position: relative;
-  
-  
-}
-.card {
-  background: rgba(255, 255, 255, 0.9); /* readable over image */
-  backdrop-filter: blur(4px);
-  
-}
 /* Full screen background */
-.bg-container {
+.bg-ctr {
   height: 100vh;           
   width: 100%;
   background-image: url("./chowmahalla.jpg");
@@ -153,10 +144,10 @@ position: relative;
   align-items: center;
   justify-content: center;
 }
-.card .btn{
+.card-42 .btn-18{
   width: 100px;
-  display: block;          /* block allows auto margins */
-  margin: 16px auto;       /* centers horizontally */
+  display: block;          
+  margin: 16px auto;      
   border-radius: 6px;
   background-color: #f4b400;
   color: #000;
