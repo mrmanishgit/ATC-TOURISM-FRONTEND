@@ -37,6 +37,7 @@ import FriendsPackage from "./pages/FriendsPackage";
 import StudentsPackage from "./pages/StudentsPackage";
 import HistoricalPackage from "./pages/HistoricalPackage";
 import WomenPackage from "./pages/WomenPackage";
+import Feedback from "./pages/Feedback";
 
 function AppLayout() {
   const location = useLocation();
@@ -59,6 +60,8 @@ function AppLayout() {
 
         {/* Dynamic Generic Page */}
         <Route path="/package/:id" element={<PackageDetails />} />
+        {/* <Route path="/package-details/:id" element={<PackageDetails />} /> */}
+
 
         {/* Separate Individual Pages */}
         <Route path="/family-package" element={<FamilyPackage />} />
@@ -83,7 +86,10 @@ function AppLayout() {
           <Route path="destinations" element={<DestinationsPage />} />
           <Route path="reports" element={<ReportsPage />} />
           <Route path="settings" element={<SettingsPage />} />
+
           <Route path="packages" element={<PackageDetails />} />
+
+           <Route path="Feedback" element={<Feedback />} />
         </Route>
 
         {/* Fallback */}

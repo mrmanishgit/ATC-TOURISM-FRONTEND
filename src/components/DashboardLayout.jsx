@@ -2,26 +2,27 @@ import { useState } from 'react'
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
 import './DashboardLayout.css'
 // import { path } from 'framer-motion/client'
-
+ 
 function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const location = useLocation()
   const navigate = useNavigate()
-
+ 
   const menuItems = [
-  
-    { path: '/dashboard', label: 'Dashboard', icon: '📊' },
-    { path: '/dashboard/bookings', label: 'Bookings', icon: '📅' },
-    { path: '/dashboard/customers', label: 'Customers', icon: '👥' },
-    { path: '/dashboard/destinations', label: 'Destinations', icon: '🌍' },
-    { path: '/dashboard/packages', label: 'Packages', icon: '🌍' },
-    
+ 
+  { path: '/dashboard', label: 'Dashboard', icon: '📊' },       
+{ path: '/dashboard/bookings', label: 'Bookings', icon: '🧾' }, 
+{ path: '/dashboard/customers', label: 'Customers', icon: '👥' },
+{ path: '/dashboard/destinations', label: 'Destinations', icon: '🌍' }, 
+{ path: '/dashboard/packages', label: 'Packages', icon: '📦' }, 
+{ path: '/dashboard/Feedback', label: 'Feedback', icon: '⭐' }, 
+ 
   ]
-
+ 
   const handleLogout = () => {
     navigate('/')
   }
-
+ 
   return (
     <div className="dashboard-layout">
       <aside className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
@@ -49,7 +50,7 @@ function DashboardLayout() {
           ))}
         </nav>
       </aside>
-
+ 
       <div className="dashboard-main">
         <header className="dashboard-header">
           <div className="header-left">
@@ -69,6 +70,5 @@ function DashboardLayout() {
     </div>
   )
 }
-
+ 
 export default DashboardLayout
-

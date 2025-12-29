@@ -148,11 +148,12 @@ const PackageDetails = () => {
         <thead>
           <tr>
             <th>#</th>
+              <th>Image</th>
             <th>Package Name</th>
             <th>Duration(Days)</th>
             <th>Adult Price</th>
             <th>Child Price</th>
-             <th>Image</th>
+           
             <th>Actions</th>
           </tr>
         </thead>

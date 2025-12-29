@@ -1,34 +1,54 @@
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import "./PackagesPage.css";
-  import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+ 
 function PackagesPage() {
-   const navigate = useNavigate(); 
-   const routes = [
-  "/family-package",
-  "/spiritual-package",
-  "/adventure-package",
-  "/couple-package",
-  "/friends-package",
-  "/students-package",
-  "/children-package",
-  "/historical-package",
-  "/women-package"
-];
-   const packages  = [
-  { id: 1, title: "Family Package", price: "₹4,999", img: "./images/bgimg.png" },
-  { id: 2, title: "Spiritual Package", price: "₹4,999", img: "./images/spiritualpack.png" },
-  { id: 3, title: "Adventure Package", price: "₹10,000", img: "./images/adventurespack.png" },
-  { id: 4, title: "Couple Package", price: "₹8,000", img: "./images/couplepack.png" },
-  { id: 5, title: "Friends Package", price: "₹9,700", img: "./images/friendspack.png" },
-  { id: 6, title: "Students Package", price: "₹8,000", img: "./images/studentspack.png" },
-  { id: 7, title: "Children Package", price: "₹8,000", img: "./images/childrenPackage.png" },
-  { id: 8, title: "Historical Package", price: "₹6,500", img: "./images/historicalpack.png" },
-  { id: 9, title: "Women Package", price: "₹6,500", img: "./images/women'spack.png" },
-];
+ 
+  const navigate = useNavigate();
+ 
+  // 🔹 State for backend data
+  const [packages, setPackages] = useState([]);
+  const [error, setError] = useState("");
 
+  // 🔗 Map backend packageId → direct route pages
+  const packageRoutes = {
+    5: "/family-package",
+    6: "/spiritual-package",
+    7: "/adventure-package",
+    8: "/couple-package",
+    9: "/friends-package",
+    10: "/students-package",
+    11: "/children-package",
+    12: "/historical-package",
+    13: "/women-package",
+
+
+  };
+ 
+  const fetchPackages = async () => {
+    try {
+      const res = await axios.get(
+        "http://localhost:8080/api/packages/all"
+      );
+      setPackages(res.data);   // ← how many rows → that many cards
+      setError("");
+    } catch (err) {
+      console.error("Failed to load packages", err);
+      setError("Failed to load packages. Please check backend.");
+    }
+  };
+ 
+  useEffect(() => {
+    const loadData = async () => {
+      await fetchPackages();
+    };
+    loadData();
+  }, []);
  
   return (
-     <div className="packages-page">
+    <div className="packages-page">
       <Navbar />
       <div className="particles1"></div>
  
@@ -42,20 +62,42 @@ function PackagesPage() {
  
       {/* PACKAGES GRID */}
       <div className="container1">
+ 
+        {/* Optional error */}
+        {error && <p style={{ color: "red" }}>{error}</p>}
+ 
         <div className="grid1">
-          {packages.map((pkg, idx) => (
-            <div className="package-card1" key={idx}>
+          {packages.map((pkg) => (
+            <div className="package-card1" key={pkg.packageId}>
+ 
               <div className="img-container1">
-                <img src={pkg.img} alt={pkg.title} />
+                <img
+                  src={pkg.imageUrl}
+                  alt={pkg.packageName}
+                />
               </div>
+ 
               <div className="card-content1">
-                <h3>{pkg.title}</h3>
-                <p>{pkg.price}</p>
-                <button onClick={() => navigate(routes[idx])}>Book Now</button>
+                <h3>{pkg.packageName}</h3>
+               <p>₹{pkg.adultPrice + pkg.foodPrice + pkg.pickupPrice}</p>
+
+ 
+                <button
+                  onClick={() => {
+                    const route = packageRoutes[pkg.packageId];
+                    route
+                      ? navigate(route)
+                      : alert("⚠️ Page not created for this package ID");
+                  }}
+                >
+                  Book Now
+                </button>
+ 
               </div>
             </div>
           ))}
         </div>
+ 
       </div>
     </div>
   );

@@ -5,6 +5,12 @@ img {
   border-radius: 8px;
 }
 
+.card-g p {
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+
 .imgbox {
   float: left;
   text-align: center;

@@ -1,0 +1,67 @@
+.feedback-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.feedback-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.feedback-header h2 {
+    color: white;
+}
+
+.feedback-search {
+    padding: 8px;
+    width: 260px;
+    border-radius: 6px;
+    border: none;
+}
+
+.feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.feedback-table th {
+    background: #2c3e50;
+    color: white;
+    padding: 12px;
+    border: 2px solid black;
+}
+
+.feedback-table td {
+    padding: 10px;
+    border: 2px solid black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.rating-stars {
+    color: gold;
+    font-size: 18px;
+}
+
+.delete-btn {
+    background: white;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #837574;
+}
+
+.no-data {
+    padding: 20px;
+    text-align: center;
+}
