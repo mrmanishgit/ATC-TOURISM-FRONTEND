@@ -1,16 +1,87 @@
-# React + Vite
+🌍 ATC Tourism Frontend (Vite + React)
+📌 Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ATC Tourism is a responsive tourism and travel booking frontend built using Vite + React for faster performance and modern development.
+The platform shows tour packages, pricing, navigation pages, and a review/feedback form with a clean UI.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🏖️ Multiple Tourism Packages (Family, Friends, Kids, Women, Spiritual, etc.)
 
-## React Compiler
+📄 Individual Package Details Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+⭐ Review / Feedback Submission Form
 
-## Expanding the ESLint configuration
+🧭 React Router-based Navigation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+📱 Fully Mobile Responsive UI
+
+🎨 Custom Styling (CSS)
+
+⚡ Built with Vite for fast build & hot reload
+
+🛠️ Tech Stack
+Technology	Purpose
+Vite	Frontend Tooling / Build System
+React.js	UI Framework
+React Router DOM	Page Navigation
+JavaScript (ES6+)	Core Logic
+CSS	Styling
+Git & GitHub	Version Control
+⚙️ Installation & Setup (Vite)
+# Clone the Repository
+git clone https://github.com/mrmanishgit/ATC-TOURISM-FRONTEND.git
+
+# Go Inside the Project Folder
+cd ATC-TOURISM-FRONTEND
+
+# Install Dependencies
+npm install
+
+# Start the Development Server
+npm run dev
+
+
+The app will start at:
+➡️ http://localhost:5173/
+ (default Vite port)
+
+📁 Folder Structure
+ATC-TOURISM-FRONTEND/
+ ├── src/
+ │   ├── components/
+ │   ├── pages/
+ │   ├── App.jsx
+ │   ├── main.jsx
+ │   └── styles/
+ ├── public/
+ ├── index.html
+ ├── vite.config.js
+ ├── package.json
+ └── README.md
+
+🔮 Future Updates (Planned)
+
+🛂 Admin Panel
+
+💳 Razorpay/Stripe Payment Gateway
+
+📩 Booking Email Notification
+
+🔗 API Integration (Node / Spring Boot backend)
+
+📊 Dashboard Analytics (Admin)
+
+✍️ Author
+
+Manish Maharana
+Java Intern – Coding Tutor, Hyderabad
+
+📧 Email: mrmanishmaharana@gmail.com
+
+💻 GitHub: https://github.com/mrmanishgit
+
+⭐ Support & Contribution
+
+If this project helped you, please ⭐ star the repo!
+Contributions, issues, and suggestions are warmly welcome.
