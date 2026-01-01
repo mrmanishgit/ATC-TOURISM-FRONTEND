@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import "./GiveReview.css";
-
-/** StarRating: interactive stars for selecting rating (1–5) */
+import { useNavigate } from "react-router-dom";
 function StarRating({ rating, setRating, readOnly = false, size = 24 }) {
   const [hover, setHover] = useState(0);
   const current = hover || rating;
-
-
   return (
     <div className="stars" style={{ fontSize: size, lineHeight: 1 }}>
       {[1, 2, 3, 4, 5].map((star) => (
@@ -32,9 +29,8 @@ function StarRating({ rating, setRating, readOnly = false, size = 24 }) {
     </div>
   );
 }
-
-
 const GiveReview = () => {
+   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     packageName: "",
@@ -43,9 +39,6 @@ const GiveReview = () => {
     rating: 0,
   });
 
-  //const [testimonials, setTestimonials] = useState([]);
-
-  // Handle text input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -57,7 +50,6 @@ const GiveReview = () => {
     setFormData((prev) => ({ ...prev, photoFile: file }));
   };
 
-  // ===================== BACKEND SUBMIT CODE ADDED HERE =====================
   // ===================== UPDATED SUBMIT FUNCTION =====================
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -73,17 +65,18 @@ const handleSubmit = async (e) => {
   formDataToSend.append("review", formData.review);
 
   if (formData.photoFile) {
-    formDataToSend.append("image", formData.photoFile); // <-- REAL IMAGE FILE
+    formDataToSend.append("image", formData.photoFile); 
   }
 
   try {
     const res = await fetch("http://localhost:8080/api/testmonial/create", {
       method: "POST",
-      body: formDataToSend, // <-- NO HEADERS REQUIRED (FormData handles it)
+      body: formDataToSend, // 
     });
 
     if (res.ok) {
       alert("Review Submitted Successfully!");
+        navigate("/feedback")
     } else {
       alert("Something went wrong!");
     }
@@ -101,9 +94,6 @@ const handleSubmit = async (e) => {
     rating: 0,
   });
 };
-
-  // ===========================================================================
-
   return (
     <div className="bg-container">
       <div className="container">
