@@ -46,7 +46,9 @@ The app will start at:
 ➡️ http://localhost:5173/
  (default Vite port)
 
-📁 Folder Structure
+## 📁 Folder Structure
+
+```bash
 ATC-TOURISM-FRONTEND/
  ├── src/
  │   ├── components/
