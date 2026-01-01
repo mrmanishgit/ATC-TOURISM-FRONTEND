@@ -77,7 +77,7 @@ ATC-TOURISM-FRONTEND/
 Manish Maharana
 Java Intern – Coding Tutor, Hyderabad
 
-📧 Email: mrmanishmaharana@gmail.com
+📧 Email: maharanamanish91@gmail.com
 
 💻 GitHub: https://github.com/mrmanishgit
 
