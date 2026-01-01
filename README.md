@@ -89,6 +89,10 @@ ATC-TOURISM-FRONTEND/
 <img width="1346" height="598" alt="Screenshot 2026-01-01 210903" src="https://github.com/user-attachments/assets/9a8cd7cd-9f9f-42a0-88c5-f1917459ff05" />
 <img width="1362" height="596" alt="Screenshot 2026-01-01 210925" src="https://github.com/user-attachments/assets/f7df664c-f1ad-4005-bef2-0bcb767d7733" />
 
+<img width="1361" height="596" alt="Screenshot 2026-01-01 210935" src="https://github.com/user-attachments/assets/0b0bcb66-d15e-4f34-b2e4-46e133e2fdd2" />
+
+<img width="1365" height="596" alt="Screenshot 2026-01-01 210949" src="https://github.com/user-attachments/assets/bdd78011-c945-42e2-9685-95b5a9048569" />
+
 <img width="1350" height="600" alt="Screenshot 2026-01-01 210803" src="https://github.com/user-attachments/assets/1d0b245b-b78a-44f1-abe2-d36eb7d5c212" />
 
 ✍️ Author
