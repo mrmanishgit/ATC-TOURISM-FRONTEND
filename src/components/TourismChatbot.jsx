@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import axios from "axios";
+//import axios from "axios";
 //import logo from "/assets/logo.png";
 import logo from "../assets/logo2.png";
+import api from "../api/api";
 
 const TourismChatbot = () => {
   const [open, setOpen] = useState(false);
@@ -21,12 +22,17 @@ const TourismChatbot = () => {
   }, [messages]);
 
   /* ===== FETCH FAQ ===== */
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8080/api/chatbotfaq/all")
+  //     .then((res) => setFaqs(res.data))
+  //     .catch(console.error);
+  // }, []);
   useEffect(() => {
-    axios
-      .get("http://localhost:8080/api/chatbotfaq/all")
-      .then((res) => setFaqs(res.data))
-      .catch(console.error);
-  }, []);
+  api.get("/api/chatbotfaq/all")
+    .then(res => setFaqs(res.data))
+    .catch(console.error);
+}, []);
 
   /* ===== OUTSIDE CLICK CLOSE ===== */
   useEffect(() => {

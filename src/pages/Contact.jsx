@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Contact.css"; // Import the custom CSS file
 import Navbar from '../components/Navbar';
-import axios from "axios";
-
+//import axios from "axios";
+ import api from "../api/api";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -34,12 +34,21 @@ const handleChange = (e) => {
 
     try {
       // ✅ Send data exactly as backend expects
-      await axios.post("http://localhost:8080/api/enquiries/register", {
-        name: formData.name,
-        email: formData.email,
-        mobileNo: Number(formData.mobileNo), // Long in backend
-        message: formData.message,
-      });
+      // await axios.post("http://localhost:8080/api/enquiries/register", {
+      //   name: formData.name,
+      //   email: formData.email,
+      //   mobileNo: Number(formData.mobileNo), // Long in backend
+      //   message: formData.message,
+      // });
+
+await api.post("/api/enquiries/register", {
+  name: formData.name,
+  email: formData.email,
+  mobileNo: Number(formData.mobileNo),
+  message: formData.message,
+});
+
+
 
       alert("✅ Enquiry submitted successfully!");
 

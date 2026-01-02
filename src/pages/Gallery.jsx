@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Gallery.css';
 import Navbar from '../components/Navbar';
-import axios from 'axios';
-
+//import axios from 'axios';
+ import api from "../api/api";
 function GalleryCard({ title, img, desc, previewChars = 140 }) {
   const [showMore, setShowMore] = useState(false);
 
@@ -35,7 +35,8 @@ export default function Gallery() {
   // 🔹 FIRST: declare function
   const fetchDestinations = async () => {
     try {
-      const res = await axios.get('http://localhost:8080/api/destinations/all');
+     // const res = await axios.get('http://localhost:8080/api/destinations/all');
+      const res = await api.get("/api/destinations/all");
       setItems(res.data);
       setError('');
     } catch (err) {

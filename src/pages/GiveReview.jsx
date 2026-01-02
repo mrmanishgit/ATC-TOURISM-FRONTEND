@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./GiveReview.css";
 import { useNavigate } from "react-router-dom";
+ import api from "../api/api";
 function StarRating({ rating, setRating, readOnly = false, size = 24 }) {
   const [hover, setHover] = useState(0);
   const current = hover || rating;
@@ -65,35 +66,35 @@ const handleSubmit = async (e) => {
   formDataToSend.append("review", formData.review);
 
   if (formData.photoFile) {
-    formDataToSend.append("image", formData.photoFile); 
+    formDataToSend.append("image", formData.photoFile);
   }
 
   try {
-    const res = await fetch("http://localhost:8080/api/testmonial/create", {
-      method: "POST",
-      body: formDataToSend, // 
+    await api.post("/api/testmonial/create", formDataToSend, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
     });
 
-    if (res.ok) {
-      alert("Review Submitted Successfully!");
-        navigate("/feedback")
-    } else {
-      alert("Something went wrong!");
-    }
+    alert("Review Submitted Successfully! ✅");
+    navigate("/feedback");
+
+    // reset form
+    setFormData({
+      name: "",
+      packageName: "",
+      review: "",
+      photoFile: null,
+      rating: 0,
+    });
+
   } catch (error) {
     console.error("Error submitting review:", error);
-    alert("Backend not connected!");
+    alert("Backend not connected or error occurred ❌");
   }
-
-  // Reset form after submission
-  setFormData({
-    name: "",
-    packageName: "",
-    review: "",
-    photoFile: null,
-    rating: 0,
-  });
 };
+
+
   return (
     <div className="bg-container">
       <div className="container">

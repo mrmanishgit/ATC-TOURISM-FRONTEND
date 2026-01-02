@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/PackageDetails.css";
- 
+  import api from "../api/api";
 const PackageDetails = () => {
   const [packages, setPackages] = useState([]);
   const [search, setSearch] = useState("");
@@ -9,7 +9,8 @@ const PackageDetails = () => {
   /* 🔹 FIX: FETCH BEFORE USEEFFECT */
   const fetchPackages = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/packages/all");
+     // const res = await axios.get("http://localhost:8080/api/packages/all");
+      const res = await api.get("/api/packages/all");
       setPackages(res.data);
     } catch (error) {   
       console.error("Fetch Error:", error);
@@ -39,7 +40,9 @@ const PackageDetails = () => {
     }
  
     try {
-      await axios.post("http://localhost:8080/api/packages/create", {
+      //await axios.post("http://localhost:8080/api/packages/create", 
+        await api.post("/api/packages/create",
+        {
         packageName,
         durationDays: Number(durationDays),
         adultPrice: Number(adultPrice),

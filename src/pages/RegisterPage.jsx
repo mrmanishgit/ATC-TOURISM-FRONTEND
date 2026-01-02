@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./RegisterPage.css";
-
+ import api from "../api/api";
 const Register = () => {
   const navigate = useNavigate();
 
@@ -29,7 +29,76 @@ const Register = () => {
 
 
 
- const handleSubmit = async (e) => {
+//  const handleSubmit = async (e) => {
+//   e.preventDefault();
+
+//   if (!form.name || !form.mobile || !form.email || !form.password || !form.dob) {
+//     alert("Please fill required fields.");
+//     return;
+//   }
+
+//   if (form.password !== form.confirmPassword) {
+//     alert("Passwords do not match.");
+//     return;
+//   }
+
+//   if (!form.nationality) {
+//     alert("Please select nationality.");
+//     return;
+//   }
+
+//   if (form.nationality === "Indian" && !form.aadhar) {
+//     alert("Please enter Aadhar number.");
+//     return;
+//   }
+
+//   if (form.nationality === "Non Indian" && !form.passport) {
+//     alert("Please enter Passport number.");
+//     return;
+//   }
+
+//   /* ===== SEND JSON ONLY (NO MULTIPART) ===== */
+
+//   const payload = {
+//     fullName: form.name,
+//     email: form.email,
+//     mobileNo: form.mobile,
+//     password: form.password,
+//     confirmPassword: form.confirmPassword,
+//     dateOfBirth: form.dob,
+//     nationality: form.nationality === "Indian" ? "INDIAN" : "NON_INDIAN",
+//    // identityProofType: form.nationality === "Indian" ? "AADHAR" : "PASSPORT",
+//     identityProofType:form.nationality === "Indian" ? "AADHAR" : "PASSPORT",
+//     identityProofNumber: form.nationality === "Indian" ? form.aadhar : form.passport,
+
+//     // photo handled normally (file name only)
+//     profileImage: form.photo ? form.photo.name : null,
+//   };
+
+//   try {
+//     // const response = await fetch("http://localhost:8080/api/users/add", {
+//     //   method: "POST",
+//     //   headers: {
+//     //     "Content-Type": "application/json",
+//     //   },
+//     //   body: JSON.stringify(payload),
+//     // });
+// await api.post("/api/users/add", payload);
+
+//     if (!response.ok) {
+//       throw new Error("Registration failed");
+//     }
+
+//     alert(`Registered successfully! Welcome ${form.name}`);
+//     navigate("/login");
+//   } catch (error) {
+//     console.error(error);
+//     alert("Registration failed. Please try again.");
+//   }
+// };
+
+
+const handleSubmit = async (e) => {
   e.preventDefault();
 
   if (!form.name || !form.mobile || !form.email || !form.password || !form.dob) {
@@ -57,8 +126,6 @@ const Register = () => {
     return;
   }
 
-  /* ===== SEND JSON ONLY (NO MULTIPART) ===== */
-
   const payload = {
     fullName: form.name,
     email: form.email,
@@ -67,35 +134,26 @@ const Register = () => {
     confirmPassword: form.confirmPassword,
     dateOfBirth: form.dob,
     nationality: form.nationality === "Indian" ? "INDIAN" : "NON_INDIAN",
-   // identityProofType: form.nationality === "Indian" ? "AADHAR" : "PASSPORT",
-    identityProofType:form.nationality === "Indian" ? "AADHAR" : "PASSPORT",
-    identityProofNumber: form.nationality === "Indian" ? form.aadhar : form.passport,
-
-    // photo handled normally (file name only)
+    identityProofType: form.nationality === "Indian" ? "AADHAR" : "PASSPORT",
+    identityProofNumber:
+      form.nationality === "Indian" ? form.aadhar : form.passport,
     profileImage: form.photo ? form.photo.name : null,
   };
 
   try {
-    const response = await fetch("http://localhost:8080/api/users/add", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
+    await api.post("/api/users/add", payload);
 
-    if (!response.ok) {
-      throw new Error("Registration failed");
-    }
-
-    alert(`Registered successfully! Welcome ${form.name}`);
+    alert(`Registered successfully! Welcome ${form.name} ✅`);
     navigate("/login");
+
   } catch (error) {
-    console.error(error);
-    alert("Registration failed. Please try again.");
+    console.error("Registration error:", error);
+    alert(
+      error.response?.data?.message ||
+      "Registration failed. Please try again."
+    );
   }
 };
-
 
   return (
     <div className="page">

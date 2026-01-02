@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/DestinationsPage.css";
-
+ import api from "../api/api";
 const DestinationPage = () => {
   const [destinations, setDestinations] = useState([]);
   const [search, setSearch] = useState("");
@@ -9,7 +9,9 @@ const DestinationPage = () => {
   /* ✔ FIXED: fetchDestinations above useEffect */
   const fetchDestinations = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/destinations/all");
+     // const res = await axios.get("http://localhost:8080/api/destinations/all");
+      const res = await api.get("/api/destinations/all");
+
       setDestinations(res.data);
     } catch (error) {
       console.error("Fetch Error:", error);
@@ -29,7 +31,9 @@ const DestinationPage = () => {
     if (!placeId) return;
 
     try {
-      await axios.post("http://localhost:8080/api/destinations/create", {
+      //await axios.post("http://localhost:8080/api/destinations/create",
+        await api.post("/api/destinations/create",
+        {
         placeId,
         description,
         imageUrl,

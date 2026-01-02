@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import "./PackagesPage.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
- 
+//import axios from "axios";
+ import api from "../api/api";
 function PackagesPage() {
  
   const navigate = useNavigate();
@@ -29,9 +29,8 @@ function PackagesPage() {
  
   const fetchPackages = async () => {
     try {
-      const res = await axios.get(
-        "http://localhost:8080/api/packages/all"
-      );
+      //const res = await axios.get( "http://localhost:8080/api/packages/all" );
+      const res = await api.get("/api/packages/all");
       setPackages(res.data);   // ← how many rows → that many cards
       setError("");
     } catch (err) {
