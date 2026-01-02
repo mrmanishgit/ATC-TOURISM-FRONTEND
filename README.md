@@ -98,7 +98,7 @@ ATC-TOURISM-FRONTEND/
 
 
 🌐 Live Project Links
-```bash
+
 🚀 Frontend (Vercel – Live UI)
 🔗 https://atc-tourism-frontend.vercel.app/
 
@@ -107,7 +107,7 @@ ATC-TOURISM-FRONTEND/
 
 🗄️ Database (Railway – PostgreSQL/MySQL)
 🔗 https://railway.com/project/568ac9ce-6763-4fe5-ac59-672eff7818a2?environmentId=47855gf-gfhh7-g4
-```
+
 🔗 Full Stack Architecture
 ```bash
 User (Browser)
