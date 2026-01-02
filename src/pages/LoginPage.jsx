@@ -44,26 +44,16 @@ const LoginPage = () => {
     //   }),
     // });
 
-
-  const response = await api.post("/api/users/login", {
+const response = await api.post("/api/users/login", {
   email: formData.email,
   password: formData.password,
 });
 
+const user = response.data;
 
-    if (!response.ok) {
-      throw new Error("Invalid credentials");
-    }
-
-    const user = await response.json();
-
-    alert("Login Successful ✅");
-    setMessage("");
-
-    // optional: store logged-in user
-    localStorage.setItem("loggedInUser", JSON.stringify(user));
-
-   navigate("/user");
+alert("Login Successful ✅");
+localStorage.setItem("loggedInUser", JSON.stringify(user));
+navigate("/user");
 
   } catch (error) {
     console.error(error);

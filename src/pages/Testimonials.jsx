@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Testimonials.css";
 import { useNavigate } from "react-router-dom";
 import Navbar from '../components/Navbar';
-
+import api from "../api/api";
 const staticTestimonials = [
   {
     name: "Mallesh Kumar Patnala",
@@ -145,14 +145,21 @@ function Testimonials() {
   const navigate = useNavigate();
   const [backendTestimonials, setBackendTestimonials] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:8080/api/testmonial/all")
-      .then((res) => res.json())
-      .then((data) => {
-        setBackendTestimonials(data);
-      })
-      .catch((error) => console.log("Error loading testimonials:", error));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:8080/api/testmonial/all")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setBackendTestimonials(data);
+  //     })
+  //     .catch((error) => console.log("Error loading testimonials:", error));
+  // }, []);
+
+useEffect(() => {
+  api.get("/api/testmonial/all")
+    .then(res => setBackendTestimonials(res.data))
+    .catch(err => console.log(err));
+}, []);
+
 
   return (
     <>
@@ -189,11 +196,17 @@ function Testimonials() {
            {backendTestimonials.map((item, index) => (
   <div className="testimonial-card" key={`db-${index}`}>
     <img
+      // src={
+      //   item.image
+      //     ? `http://localhost:8080/uploads/${item.image}`
+      //     : "/default.jpg"
+      // }
       src={
-        item.image
-          ? `http://localhost:8080/uploads/${item.image}`
-          : "/default.jpg"
-      }
+  item.image
+    ? `${import.meta.env.VITE_API_URL}/uploads/${item.image}`
+    : "/default.jpg"
+}
+
       alt={item.name}
       className="profile-img"
     />

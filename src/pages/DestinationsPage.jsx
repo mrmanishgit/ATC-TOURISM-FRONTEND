@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import "../styles/DestinationsPage.css";
- import api from "../api/api";
+import api from "../api/api";
+
 const DestinationPage = () => {
   const [destinations, setDestinations] = useState([]);
   const [search, setSearch] = useState("");
 
-  /* ✔ FIXED: fetchDestinations above useEffect */
+  /* ✔ FETCH DESTINATIONS */
   const fetchDestinations = async () => {
     try {
-     // const res = await axios.get("http://localhost:8080/api/destinations/all");
       const res = await api.get("/api/destinations/all");
-
       setDestinations(res.data);
     } catch (error) {
       console.error("Fetch Error:", error);
@@ -19,10 +17,14 @@ const DestinationPage = () => {
     }
   };
 
-    useEffect(() => {
-    const loadData = async () => {await fetchDestinations(); }; loadData();
+  useEffect(() => {
+    const loadData = async () => {
+      await fetchDestinations();
+    };
+    loadData();
   }, []);
 
+  /* ➕ ADD */
   const handleAdd = async () => {
     const placeId = prompt("Enter Place ID");
     const description = prompt("Enter Description");
@@ -31,13 +33,12 @@ const DestinationPage = () => {
     if (!placeId) return;
 
     try {
-      //await axios.post("http://localhost:8080/api/destinations/create",
-        await api.post("/api/destinations/create",
-        {
+      await api.post("/api/destinations/create", {
         placeId,
         description,
         imageUrl,
       });
+
       alert("Destination added");
       fetchDestinations();
     } catch (error) {
@@ -46,20 +47,19 @@ const DestinationPage = () => {
     }
   };
 
+  /* ✏️ UPDATE */
   const handleUpdate = async (d) => {
     const placeId = prompt("Update Place ID", d.placeId);
     const description = prompt("Update Description", d.description);
     const imageUrl = prompt("Update Image URL", d.imageUrl);
 
     try {
-      await axios.put(
-        `http://localhost:8080/api/destinations/update/${d.destinationId}`,
-        {
-          placeId,
-          description,
-          imageUrl,
-        }
-      );
+      await api.put(`/api/destinations/update/${d.destinationId}`, {
+        placeId,
+        description,
+        imageUrl,
+      });
+
       alert("Destination updated");
       fetchDestinations();
     } catch (error) {
@@ -68,11 +68,11 @@ const DestinationPage = () => {
     }
   };
 
+  /* 🔍 VIEW */
   const handleView = async (id) => {
     try {
-      const res = await axios.get(
-        `http://localhost:8080/api/destinations/${id}`
-      );
+      const res = await api.get(`/api/destinations/${id}`);
+
       alert(
         `Destination Details:\n\nPlace: ${res.data.placeName}\nDescription: ${res.data.description}`
       );
@@ -82,11 +82,12 @@ const DestinationPage = () => {
     }
   };
 
+  /* ❌ DELETE */
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this destination?")) return;
 
     try {
-      await axios.delete(`http://localhost:8080/api/destinations/delete/${id}`);
+      await api.delete(`/api/destinations/delete/${id}`);
       setDestinations((prev) =>
         prev.filter((d) => d.destinationId !== id)
       );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+//import axios from "axios";
 import "../styles/Feedback.css";
-
+import api from "../api/api";
 const Feedback = () => {
   const [feedbacks, setFeedbacks] = useState([]);
   const [search, setSearch] = useState("");
@@ -9,8 +9,11 @@ const Feedback = () => {
   // 🔹 1) Define function BEFORE useEffect
   const fetchFeedbacks = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/testmonial/all");
+      // const res = await axios.get("http://localhost:8080/api/testmonial/all");
+      // setFeedbacks(res.data);
+      const res = await api.get("/api/testmonial/all");
       setFeedbacks(res.data);
+
     } catch (error) {
       console.error(error);
       alert("Failed to load feedbacks");
@@ -29,7 +32,9 @@ useEffect(() => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure?")) return;
     try {
-      await axios.delete(`http://localhost:8080/api/testmonial/remove/${id}`);
+      //await axios.delete(`http://localhost:8080/api/testmonial/remove/${id}`);
+      await api.delete(`/api/testmonial/remove/${id}`);
+
       setFeedbacks((prev) => prev.filter((f) => f.id !== id));
     } catch (error) {
       console.error(error);
