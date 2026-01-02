@@ -95,6 +95,29 @@ ATC-TOURISM-FRONTEND/
 
 <img width="1350" height="600" alt="Screenshot 2026-01-01 210803" src="https://github.com/user-attachments/assets/1d0b245b-b78a-44f1-abe2-d36eb7d5c212" />
 
+
+
+🌐 Live Project Links
+
+🚀 Frontend (Vercel – Live UI)
+🔗 https://atc-tourism-frontend.vercel.app/
+
+🛠️ Backend API (Render)
+🔗 https://aja-tourism-corporation.onrender.com/
+
+🗄️ Database (Railway – PostgreSQL/MySQL)
+🔗 https://railway.com/project/568ac9ce-6763-4fe5-ac59-672eff7818a2?environmentId=47855gf-gfhh7-g4
+
+🔗 Full Stack Architecture
+```bash
+User (Browser)
+   ↓
+Frontend (React + Vite) – Vercel
+   ↓ REST API
+Backend (Spring Boot / Node) – Render
+   ↓
+Database (Railway Cloud DB)
+```
 ✍️ Author
 
 Manish Maharana
