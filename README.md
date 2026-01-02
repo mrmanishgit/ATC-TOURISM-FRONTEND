@@ -80,7 +80,7 @@ ATC-TOURISM-FRONTEND/
 
 💳 Razorpay/Stripe Payment Gateway
 
-📩 Booking Email Notification
+📩 Booking Email Notification 
 
 🔗 API Integration (Node / Spring Boot backend)
 
