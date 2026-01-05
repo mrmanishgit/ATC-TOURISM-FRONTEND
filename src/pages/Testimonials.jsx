@@ -193,38 +193,35 @@ useEffect(() => {
             ))}
 
             {/* ⭐ BACKEND DATA AFTER */}
-           {backendTestimonials.map((item, index) => (
-  <div className="testimonial-card" key={`db-${index}`}>
-    <img
-      // src={
-      //   item.image
-      //     ? `http://localhost:8080/uploads/${item.image}`
-      //     : "/default.jpg"
-      // }
-      src={
-  item.image
-    ? `${import.meta.env.VITE_API_URL}/uploads/${item.image}`
-    : "/default.jpg"
-}
+           {/* ⭐ BACKEND TESTIMONIALS */}
+            {backendTestimonials.map((item, index) => {
+              const ratingValue = Number(item.rating) || 0;
 
-      alt={item.name}
-      className="profile-img"
-    />
+              return (
+                <div className="testimonial-card" key={`db-${index}`}>
+                  <img
+                    src={
+                      item.image
+                        ? `${import.meta.env.VITE_API_URL}/uploads/${item.image}`
+                        : "/default.jpg"
+                    }
+                    alt={item.name}
+                    className="profile-img"
+                  />
 
-    <p className="review">“{item.review}”</p>
+                  <p className="review">“{item.review}”</p>
 
-    <div className="rating">
-      {"★".repeat(item.rating)}{"☆".repeat(5 - item.rating)}
-    </div>
+                  <div className="rating">
+                    {"★".repeat(ratingValue)}
+                    {"☆".repeat(5 - ratingValue)}
+                  </div>
 
-    <h4>{item.name}</h4>
+                  <h4>{item.name}</h4>
 
-    {/* 🔹 Show packageName here instead of location */}
-    {item.packageName && <span>{item.packageName}</span>}
-  </div>
-))}
-
-
+                  {item.packageName && <span>{item.packageName}</span>}
+                </div>
+               );
+            })}
           </div>
         </section>
       </div>

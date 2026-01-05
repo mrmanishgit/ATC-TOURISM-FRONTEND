@@ -6,7 +6,7 @@
     /* Creative Pink */
     --gold: #ffb703;
     /* Royal Gold */
-    --dark-bg: #050505;
+    --dark-bg: #ffffff;
     /* Luxury Black */
     --card-bg: rgba(18, 18, 18, 0.78);
     --border-soft: rgba(255, 255, 255, 0.1);
@@ -14,7 +14,7 @@
 }
 
 #root {
-    background-color: #1d1b1b;
+    background-color: #2e2c2c;
 }
 
 /* ================= RESET (CORRECT WAY) ================= */

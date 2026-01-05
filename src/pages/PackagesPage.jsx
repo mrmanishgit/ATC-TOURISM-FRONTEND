@@ -14,15 +14,15 @@ function PackagesPage() {
 
   // 🔗 Map backend packageId → direct route pages
   const packageRoutes = {
-    5: "/family-package",
-    6: "/spiritual-package",
-    7: "/adventure-package",
-    8: "/couple-package",
-    9: "/friends-package",
-    10: "/students-package",
-    11: "/children-package",
-    12: "/historical-package",
-    13: "/women-package",
+    2: "/family-package",
+    3: "/spiritual-package",
+    4: "/adventure-package",
+    5: "/couple-package",
+    6: "/friends-package",
+    7: "/students-package",
+    8: "/children-package",
+    9: "/historical-package",
+    10: "/women-package",
 
 
   };
